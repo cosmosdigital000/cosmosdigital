@@ -7,7 +7,101 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <style>
+        <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  
+  <style>
+             .swiper-container {
+            width: 100%;
+            height: 400px;
+            padding: 20px 0;
+        }
+        .swiper-slide {
+            width: 616px;
+            height: 250px;
+            display: flex;
+            background: transparent;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .process-icon {
+            width: 192px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #85A947;
+            color: white;
+            flex-shrink: 0;
+            border-radius: 10px 0 0 10px;
+        }
+        .process-content {
+            width: 424px;
+            padding: 24px;
+            flex-shrink: 0;
+            background-color: #85A947;
+            color: white;
+            border-radius: 0 10px 10px 0;
+        }
+        .process-title {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .process-text {
+            font-size: 16px;
+            line-height: 1.62;
+            margin-top: 12px;
+        }
+        .process-step {
+            color: inherit;
+            text-decoration: none;
+            float: right;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: #85A947;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .swiper-slide {
+                width: 90%;
+                height: auto;
+                flex-direction: column;
+            }
+            .process-icon {
+                width: 100%;
+                height: 150px;
+                border-radius: 10px 10px 0 0;
+            }
+            .process-content {
+                width: 100%;
+                border-radius: 0 0 10px 10px;
+            }
+            .process-title {
+                font-size: 28px;
+            }
+            .process-text {
+                font-size: 14px;
+            }
+        }
+
+    
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #EFE3C2; }
         ::-webkit-scrollbar-thumb { background: #85A947; border-radius: 4px; }
@@ -27,6 +121,7 @@
         .animate-marquee { display: flex; animation: marquee 20s linear infinite; }
         .animate-marquee:hover { animation-play-state: paused; }
     </style>
+</head>
 </head>
 <body class="bg-custom-light-beige font-sans">
     <!-- Navigation -->
@@ -309,94 +404,93 @@
     </section>
 
     <!-- Process Section -->
-    <section class="bg-gray-100 py-12">
-        <div class="container mx-auto px-6 lg:px-16">
-            <div class="text-center mb-12">
+        <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
                 <h2 class="text-xl font-medium text-gray-600">Our Process Involvement</h2>
-                <p class="text-3xl font-bold text-gray-800 mt-2">Maximizing <span class="text-green-600">software engineering</span> output with our people-focused <span class="text-green-600">processes.</span></p>
+                <p class="text-3xl font-bold text-gray-800 mt-2">
+                    Maximizing <span class="text-green-600">software engineering</span> output
+                </p>
             </div>
 
-            <!-- Process Timeline -->
-            <div class="flex flex-col md:flex-row items-center justify-between relative">
-                <!-- Line connecting steps -->
-                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-green-600 transform -translate-y-1/2"></div>
-
-                <!-- Step 1 -->
-                <div class="bg-custom-light-green text-white p-6 rounded-lg shadow-lg relative z-10 mb-8 md:mb-0">
-                    <div class="text-center mb-4">
-                        <i class="fas fa-search text-4xl"></i>
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Process Steps -->
+                    <div class="swiper-slide">
+                        <div class="process-icon">
+                            <i class="fas fa-search text-5xl"></i>
+                        </div>
+                        <div class="process-content">
+                            <h2 class="process-title">Discovery</h2>
+                            <p class="process-text">Initial consultation and requirements gathering to understand your project needs.</p>
+                            <span class="process-step">Step 01</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold">01</h3>
-                    <p class="text-sm mt-2">Discovery Workshop</p>
+
+                    <div class="swiper-slide">
+                        <div class="process-icon">
+                            <i class="fas fa-file-alt text-5xl"></i>
+                        </div>
+                        <div class="process-content">
+                            <h2 class="process-title">Planning</h2>
+                            <p class="process-text">Detailed documentation and project roadmap development.</p>
+                            <span class="process-step">Step 02</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="process-icon">
+                            <i class="fas fa-paint-brush text-5xl"></i>
+                        </div>
+                        <div class="process-content">
+                            <h2 class="process-title">Design</h2>
+                            <p class="process-text">Creating intuitive user interfaces and experiences.</p>
+                            <span class="process-step">Step 03</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="process-icon">
+                            <i class="fas fa-code text-5xl"></i>
+                        </div>
+                        <div class="process-content">
+                            <h2 class="process-title">Development</h2>
+                            <p class="process-text">Transforming designs into functional software solutions.</p>
+                            <span class="process-step">Step 04</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="process-icon">
+                            <i class="fas fa-vial text-5xl"></i>
+                        </div>
+                        <div class="process-content">
+                            <h2 class="process-title">Testing</h2>
+                            <p class="process-text">Rigorous quality assurance and performance testing.</p>
+                            <span class="process-step">Step 05</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="process-icon">
+                            <i class="fas fa-cogs text-5xl"></i>
+                        </div>
+                        <div class="process-content">
+                            <h2 class="process-title">Maintenance</h2>
+                            <p class="process-text">Ongoing support and continuous improvement.</p>
+                            <span class="process-step">Step 06</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Arrow -->
-                <div class="hidden md:block text-green-600 text-3xl mx-2">&#8594;</div>
-
-                <!-- Step 2 -->
-                <div class="bg-custom-light-green text-white p-6 rounded-lg shadow-lg relative z-10 mb-8 md:mb-0">
-                    <div class="text-center mb-4">
-                        <i class="fas fa-file-alt text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold">02</h3>
-                    <p class="text-sm mt-2">Planning & Documentation</p>
-                </div>
-
-                <!-- Arrow -->
-                <div class="hidden md:block text-green-600 text-3xl mx-2">&#8594;</div>
-
-                <!-- Step 3 -->
-                <div class="bg-custom-light-green text-white p-6 rounded-lg shadow-lg relative z-10 mb-8 md:mb-0">
-                    <div class="text-center mb-4">
-                        <i class="fas fa-paint-brush text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold">03</h3>
-                    <p class="text-sm mt-2">IA & UX/UI Design</p>
-                </div>
-
-                <!-- Arrow -->
-                <div class="hidden md:block text-green-600 text-3xl mx-2">&#8594;</div>
-
-                <!-- Step 4 -->
-                <div class="bg-custom-light-green text-white p-6 rounded-lg shadow-lg relative z-10 mb-8 md:mb-0">
-                    <div class="text-center mb-4">
-                        <i class="fas fa-code text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold">04</h3>
-                    <p class="text-sm mt-2">Development</p>
-                </div>
-
-                <!-- Arrow -->
-                <div class="hidden md:block text-green-600 text-3xl mx-2">&#8594;</div>
-
-                <!-- Step 5 -->
-                <div class="bg-custom-light-green text-white p-6 rounded-lg shadow-lg relative z-10 mb-8 md:mb-0">
-                    <div class="text-center mb-4">
-                        <i class="fas fa-vial text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold">05</h3>
-                    <p class="text-sm mt-2">Testing</p>
-                </div>
-
-                <!-- Arrow -->
-                <div class="hidden md:block text-green-600 text-3xl mx-2">&#8594;</div>
-
-                <!-- Step 6 -->
-                <div class="bg-custom-light-green text-white p-6 rounded-lg shadow-lg relative z-10 mb-8 md:mb-0">
-                    <div class="text-center mb-4">
-                        <i class="fas fa-cogs text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold">06</h3>
-                    <p class="text-sm mt-2">Maintenance</p>
-                </div>
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-
-            <p class="text-xs text-gray-600 mt-6 text-center">
-                We usually tailor our process based on the project requirements and the combination of services. Our base process varies slightly while following the underlying principles.
-            </p>
         </div>
     </section>
-
+    
     <!-- Industries Section -->
     <section id="industries" class="py-20 bg-custom-pale-green">
         <div class="container mx-auto px-6">
@@ -738,5 +832,46 @@
         });
     });
 </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            initialSlide: 2,
+            coverflowEffect: {
+                slideShadows: true,
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
+                },
+            },
+        });
+
+        swiper.on('transitionEnd', () => {
+            getSlideContent();
+        });
+
+        function getSlideContent() {
+            const ActiveSlide = document.querySelector('.swiper-slide-active');
+            console.log(ActiveSlide.innerText);
+        }
+    </script>
 </body>
 </html>
