@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   
   <style>
+      /* Ensure the mobile menu is hidden by default on larger screens */
+@media (min-width: 768px) {
+    #mobile-menu {
+        display: none !important;
+    }
+}
              .swiper-container {
             width: 100%;
             height: 400px;
@@ -128,14 +134,18 @@
     <nav class="fixed top-0 w-full bg-custom-dark-green shadow-lg z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-custom-light-beige">COSMOSInnovation</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Home</a>
-                <a href="#about" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">About Us</a>
-                <a href="#services" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Services</a>
-                <a href="#success" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
-                <a href="#contactfooter" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
-            </div>
-            <button class="md:hidden text-custom-light-beige"><span class="material-icons">menu</span></button>
+            <button id="mobile-menu-button" class="md:hidden text-custom-light-beige">
+    <span class="material-icons">menu</span>
+</button>
+<div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-custom-dark-green shadow-lg">
+    <div class="flex flex-col space-y-4 p-4">
+        <a href="#home" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Home</a>
+        <a href="#about" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">About Us</a>
+        <a href="#services" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Services</a>
+        <a href="#success" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
+        <a href="#contactfooter" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
+    </div>
+</div>
         </div>
     </nav>
 
@@ -805,6 +815,11 @@
         });
     });
 
+        // Toggle mobile menu navbar
+document.getElementById('mobile-menu-button').addEventListener('click', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+});
     // Mobile Interaction
     document.querySelectorAll('[data-tech$="-mobile"]').forEach(button => {
         button.addEventListener('click', () => {
