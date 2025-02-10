@@ -143,32 +143,38 @@
 <body class="bg-custom-light-beige font-sans">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-custom-dark-green shadow-lg z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-custom-light-beige">COSMOSInnovation</a>
-            <!-- Hamburger Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-custom-light-beige focus:outline-none">
-                <span class="material-icons text-3xl">menu</span>
-            </button>
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Home</a>
-                <a href="#about" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">About Us</a>
-                <a href="#services" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Services</a>
-                <a href="#success" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
-                <a href="#contactfooter" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
-            </div>
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo and Text -->
+        <a href="#home" class="flex items-center text-2xl font-bold text-custom-dark-green">
+            <!-- Add the logo here -->
+            <img src="path/to/your/logo.png" alt="COSMOSInnovation Logo" class="h-8 mr-2"> <!-- Adjust the logo size as needed -->
+            COSMOSInnovation
+        </a>
+        <!-- Hamburger Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-custom-light-beige focus:outline-none">
+            <span class="material-icons text-3xl">menu</span>
+        </button>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8">
+            <a href="#home" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Home</a>
+            <a href="#about" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">About Us</a>
+            <a href="#services" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Services</a>
+            <a href="#success" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
+            <a href="#contactfooter" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-custom-dark-green shadow-lg">
-            <div class="flex flex-col space-y-4 p-4">
-                <a href="#home" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Home</a>
-                <a href="#about" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">About Us</a>
-                <a href="#services" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Services</a>
-                <a href="#success" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
-                <a href="#contactfooter" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
-            </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-custom-dark-green shadow-lg">
+        <div class="flex flex-col space-y-4 p-4">
+            <a href="#home" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Home</a>
+            <a href="#about" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">About Us</a>
+            <a href="#services" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Services</a>
+            <a href="#success" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
+            <a href="#contactfooter" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- Home Section -->
     <section id="home" class="min-h-screen flex items-center justify-center bg-custom-light-beige">
