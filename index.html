@@ -10,6 +10,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <style>
+    /* ... your other styles ... */
+    
+    #mobile-menu {
+        transition: max-height 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+    }
+    
+    #mobile-menu.open {
+        max-height: 300px; /* Adjust based on your menu height */
+    }
+    
+    /* Mobile menu needs to be visible (not display:none) for the transition to work */
+    #mobile-menu.hidden {
+        display: none;
+    }
+    
+    #mobile-menu:not(.hidden) {
+        display: block;
+    }
+    
+    /* ... your other styles ... */
+</style>
     <style>
         /* Prevent horizontal overflow */
         html, body {
@@ -18,15 +43,7 @@
             max-width: 100%;
         }
 
-        #mobile-menu {
-    transition: all 0.3s ease-in-out;
-    max-height: 0;
-    overflow: hidden;
-}
 
-#mobile-menu.open {
-    max-height: 300px; /* Adjust this based on your menu height */
-}
 
         
         /* Fix navigation bar */
@@ -176,14 +193,14 @@
     </div>
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden bg-custom-dark-green shadow-inner border-t border-custom-light-beige/20">
-        <div class="flex flex-col space-y-4 p-4">
-            <a href="#home" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Home</a>
-            <a href="#about" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">About Us</a>
-            <a href="#services" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Services</a>
-            <a href="#success" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
-            <a href="#contactfooter" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
-        </div>
+    <div class="flex flex-col space-y-4 p-4">
+        <a href="#home" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Home</a>
+        <a href="#about" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">About Us</a>
+        <a href="#services" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Services</a>
+        <a href="#success" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
+        <a href="#contactfooter" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
     </div>
+</div>
 </nav>
 
 
@@ -891,46 +908,47 @@
             console.log(ActiveSlide.innerText);
         }
     </script>
+
     <script>
-        // Toggle mobile menu
-        document.getElementById('mobile-menu-button').addEventListener('click', () => {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
+
+    // Remove all previous mobile menu JavaScript and replace with this
+document.addEventListener('DOMContentLoaded', function() {
+    // Toggle mobile menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
     
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            // Toggle the 'hidden' class to control display
+            mobileMenu.classList.toggle('hidden');
+            
+            // Toggle the 'open' class to control the height animation
+            setTimeout(() => {
+                mobileMenu.classList.toggle('open');
+            }, 10); // Small delay to ensure the display change happens first
+            
+            console.log('Menu button clicked');
+        });
+        
         // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                const mobileMenu = document.getElementById('mobile-menu');
-                mobileMenu.classList.add('hidden');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('open');
+                
+                // Wait for transition to complete before hiding
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300); // Match this to your transition duration
+                
+                console.log('Menu link clicked');
             });
         });
-    </script>
-    <script>
-    // Wait for the DOM to be fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        // Toggle mobile menu
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-                console.log('Menu button clicked'); // Debug line
-            });
-            
-            // Close mobile menu when a link is clicked
-            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.add('hidden');
-                    console.log('Menu link clicked'); // Debug line
-                });
-            });
-        } else {
-            console.error('Mobile menu elements not found');
-        }
-    });
-</script>
+    } else {
+        console.error('Mobile menu elements not found');
+    }
+});
+   </script>
+    
 </body>
 </html>
