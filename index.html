@@ -18,6 +18,17 @@
             max-width: 100%;
         }
 
+        #mobile-menu {
+    transition: all 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#mobile-menu.open {
+    max-height: 300px; /* Adjust this based on your menu height */
+}
+
+        
         /* Fix navigation bar */
         nav {
             position: fixed;
@@ -156,21 +167,21 @@
         </button>
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8">
-            <a href="#home" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Home</a>
-            <a href="#about" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">About Us</a>
-            <a href="#services" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Services</a>
-            <a href="#success" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
-            <a href="#contactfooter" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
+            <a href="#home" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Home</a>
+            <a href="#about" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">About Us</a>
+            <a href="#services" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Services</a>
+            <a href="#success" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
+            <a href="#contactfooter" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
         </div>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-custom-dark-green shadow-lg">
+    <div id="mobile-menu" class="md:hidden hidden bg-custom-dark-green shadow-inner border-t border-custom-light-beige/20">
         <div class="flex flex-col space-y-4 p-4">
-            <a href="#home" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Home</a>
-            <a href="#about" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">About Us</a>
-            <a href="#services" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Services</a>
-            <a href="#success" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
-            <a href="#contactfooter" class="text-custom-dark-green hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
+            <a href="#home" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Home</a>
+            <a href="#about" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">About Us</a>
+            <a href="#services" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Services</a>
+            <a href="#success" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Success Stories</a>
+            <a href="#contactfooter" class="text-custom-light-beige hover:text-custom-light-green transition-colors duration-300">Contact Us</a>
         </div>
     </div>
 </nav>
