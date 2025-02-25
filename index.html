@@ -153,7 +153,7 @@
 </head>
 <body class="bg-custom-light-beige font-sans">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-custom-dark-green shadow-lg z-50">
+<nav class="fixed top-0 w-full bg-custom-dark-green shadow-lg z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         <!-- Logo and Text -->
         <a href="#home" class="flex items-center text-2xl font-bold text-custom-light-beige">
@@ -906,5 +906,31 @@
             });
         });
     </script>
+    <script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toggle mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                console.log('Menu button clicked'); // Debug line
+            });
+            
+            // Close mobile menu when a link is clicked
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    console.log('Menu link clicked'); // Debug line
+                });
+            });
+        } else {
+            console.error('Mobile menu elements not found');
+        }
+    });
+</script>
 </body>
 </html>
